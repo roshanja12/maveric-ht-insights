@@ -4,13 +4,15 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.acme.enums.Type;
 
-import java.time.Instant;
+
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "insights_customers")
 public class InsightsCustomers {
@@ -26,8 +28,8 @@ public class InsightsCustomers {
     public Long customerId;
     @Column(nullable = false)
     public String city;
-    @Column(nullable = false)
-    public Instant createdAt;
+    @Column(name="created_at",nullable = false)
+    public String createdAt;
     @Enumerated(EnumType.STRING)
     public Type type;
 }

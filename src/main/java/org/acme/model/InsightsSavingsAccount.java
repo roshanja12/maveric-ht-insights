@@ -8,13 +8,14 @@ import org.acme.enums.Type;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "insight_savings_account")
+@Table(name = "insights_savings_account")
 public class InsightsSavingsAccount {
+
     @Id
     @GeneratedValue
     Long id;
@@ -33,12 +34,13 @@ public class InsightsSavingsAccount {
 
     @Column(name="allow_over_draft",nullable = false)
     Boolean allowOverDraft;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     Type type;
 
-    @CreationTimestamp
-    Instant createdAt;
+    @Column(name="created_at",nullable = false)
+    String createdAt;
 
     @Column(nullable = false)
     String city;

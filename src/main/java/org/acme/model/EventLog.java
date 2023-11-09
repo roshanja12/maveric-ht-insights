@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,15 +19,15 @@ public class EventLog {
 
 	@Id
 	@GeneratedValue
-	public  Long id;
+	private  Long id;
+	
 	@Column(nullable = false)
-	public Type type;
+	private Type type;
+	
 	@Column(nullable = false)
-	public String message;
-	@CreationTimestamp
-	public Instant timestamps;
+	private String message;
+	
 	@Column(name="created_at",nullable = false)
-	@CreationTimestamp
-	public Instant createdAt;
+	private Instant createdAt;
 
 }

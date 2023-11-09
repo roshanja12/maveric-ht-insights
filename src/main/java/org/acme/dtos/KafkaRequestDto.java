@@ -6,9 +6,6 @@ import org.acme.model.InsightsLoans;
 
 @Data
 public class KafkaRequestDto {
-
     public Type type;
 	public Object  message;
-
-
 }

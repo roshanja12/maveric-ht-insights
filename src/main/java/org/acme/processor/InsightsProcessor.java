@@ -65,7 +65,7 @@ public class InsightsProcessor {
 //    }
 
     @Incoming("insights-events")
-    @Outgoing("quotes")
+//    @Outgoing("quotes")
     @Blocking
     @Transactional
     public InsightsCustomers getDetailsFromInsight(KafkaRequestDto requestDto) {

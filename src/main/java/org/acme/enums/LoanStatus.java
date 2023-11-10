@@ -1,5 +1,5 @@
 package org.acme.enums;
 
 public enum LoanStatus {
-    approve,withdrawn , rejected
+    APPLIED, APPROVED, REJECTED, WITHDRAW
 }

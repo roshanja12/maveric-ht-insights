@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.acme.enums.InterestCompoundingPeriod;
 import org.acme.enums.Type;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -20,6 +21,9 @@ public class InsightsSavingsAccount {
     @GeneratedValue
     Long id;
 
+    @Column(name = "loan_id", nullable = false)
+    Long savingsAccountId;
+
     @Column(nullable = false)
     String status;
 
@@ -30,7 +34,7 @@ public class InsightsSavingsAccount {
     BigDecimal minOpeningBalance;
 
     @Column(name="interest_compounding_period",nullable = false)
-    BigDecimal interestCompoundingPeriod;
+    InterestCompoundingPeriod interestCompoundingPeriod;
 
     @Column(name="allow_over_draft",nullable = false)
     Boolean allowOverDraft;

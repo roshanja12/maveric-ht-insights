@@ -41,5 +41,17 @@ public class InsightsResource {
         return commonUtil.buildSuccessResponse("Successfully retrieved customer count by month for year ", Response.Status.OK, null, response, uriInfo);
     }
 
+    @GET
+    @Path("/percentage")
+        public String calculateSavingsAccountPercentageByCity(@QueryParam("city") String city) {
+        double percentage = insightsService.calculateTotalSavingsAccountPercentageForCity(city);
+        return Double.toString(percentage);
+    }
 
+    @GET
+    @Path("/count-by-month")
+    public Map<String, Long> countLoansProductByMonth(@QueryParam("year") int year) {
+        log.info("Inside loan controller call");
+        return insightsService.countLoansProductByMonth(year);
+    }
 }

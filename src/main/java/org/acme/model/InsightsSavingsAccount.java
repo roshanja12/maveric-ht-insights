@@ -21,7 +21,7 @@ public class InsightsSavingsAccount {
     @GeneratedValue
     Long id;
 
-    @Column(name = "loan_id", nullable = false)
+    @Column(name = "savings_account_id", nullable = false)
     Long savingsAccountId;
 
     @Column(nullable = false)

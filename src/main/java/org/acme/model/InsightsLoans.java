@@ -21,6 +21,12 @@ public class InsightsLoans {
     @GeneratedValue
     public Long id;
 
+    @Column(name = "year")
+    private int year;
+
+    @Column(name = "month")
+    private int month;
+
     @Column(name = "loan_id", nullable = false)
     Long loanId;
 

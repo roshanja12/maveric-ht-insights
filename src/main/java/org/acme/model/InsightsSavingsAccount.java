@@ -33,6 +33,7 @@ public class InsightsSavingsAccount {
     @Column(name="min_opening_balance",nullable = false)
     BigDecimal minOpeningBalance;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="interest_compounding_period",nullable = false)
     InterestCompoundingPeriod interestCompoundingPeriod;
 

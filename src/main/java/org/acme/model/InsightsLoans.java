@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 public class InsightsLoans {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
     @Column(name = "year")

@@ -8,7 +8,6 @@ import lombok.ToString;
 import org.acme.enums.Type;
 
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,17 +17,17 @@ import org.acme.enums.Type;
 public class InsightsCustomers {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
     @Column(nullable = false)
     public String year;
     @Column(nullable = false)
     public String month;
-    @Column(name="customer_id",nullable = false)
+    @Column(name = "customer_id", nullable = false)
     public Long customerId;
     @Column(nullable = false)
     public String city;
-    @Column(name="created_at",nullable = false)
+    @Column(name = "created_at", nullable = false)
     public String createdAt;
     @Enumerated(EnumType.STRING)
     public Type type;

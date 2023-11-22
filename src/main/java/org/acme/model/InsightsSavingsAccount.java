@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.acme.enums.InterestCompoundingPeriod;
 import org.acme.enums.Type;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 
@@ -18,7 +17,7 @@ import java.math.BigDecimal;
 public class InsightsSavingsAccount {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
     @Column(name = "savings_account_id", nullable = false)
@@ -27,24 +26,24 @@ public class InsightsSavingsAccount {
     @Column(nullable = false)
     String status;
 
-    @Column(name="customer_id",nullable = false)
+    @Column(name = "customer_id", nullable = false)
     Long customerId;
 
-    @Column(name="min_opening_balance",nullable = false)
+    @Column(name = "min_opening_balance", nullable = false)
     BigDecimal minOpeningBalance;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="interest_compounding_period",nullable = false)
+    @Column(name = "interest_compounding_period", nullable = false)
     InterestCompoundingPeriod interestCompoundingPeriod;
 
-    @Column(name="allow_over_draft",nullable = false)
+    @Column(name = "allow_over_draft", nullable = false)
     Boolean allowOverDraft;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     Type type;
 
-    @Column(name="created_at",nullable = false)
+    @Column(name = "created_at", nullable = false)
     String createdAt;
 
     @Column(nullable = false)
